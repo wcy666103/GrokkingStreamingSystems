@@ -11,6 +11,8 @@ import java.util.Set;
  *   Job job = new Job("my_job");
  *   job.addSource(mySource)
  *      .applyOperator(myOperator);
+ * stream是流系统的核心数据结构，表示一个数据流，具有一个属性operatorSet存储了所有应用在这个流上的操作算子集合。
+ * 具有一个applyOperator方法，可以为这个流增加增加一个算子，并返回这个算子的输出流。
  */
 public class Stream {
   // List of all operators to be applied to this stream.

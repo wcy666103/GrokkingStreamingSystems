@@ -7,6 +7,9 @@ import java.util.List;
 import com.streamwork.ch02.api.Event;
 import com.streamwork.ch02.api.Source;
 
+/**
+ * 继承source类，复写了getEvents方法，读取套接字的每一行封装为event并推入输出事件队列。
+ */
 class SensorReader extends Source {
   private final BufferedReader reader;
 
@@ -24,6 +27,7 @@ class SensorReader extends Source {
         // Exit when user closes the server.
         System.exit(0);
       }
+      // 事件收集器增加一个事件
       eventCollector.add(new VehicleEvent(vehicle));
       System.out.println("");  // An empty line before logging new events
       System.out.println("SensorReader --> " + vehicle);

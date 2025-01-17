@@ -2,10 +2,12 @@ package com.streamwork.ch02.api;
 
 /**
  * The base class for all components, including Source and Operator.
+ * 所有组件的基类，创建了两个属性name和outgoingStream输出流，所有继承它的类都将获得这两个属性
  */
 public class Component {
   private String name;
   // The stream object is used to connect the downstream operators.
+//  创建联系下流算子的流
   private Stream outgoingStream = new Stream();
 
   public Component(String name) {
